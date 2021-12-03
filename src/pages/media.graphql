@@ -1,0 +1,23 @@
+query Media($page: Int, $perPage: Int) {
+  Page(page: $page, perPage: $perPage) {
+    media(genre_in: "horror", sort: POPULARITY_DESC, status: FINISHED) {
+      id
+      title {
+        english
+        romaji
+      }
+      description(asHtml: false)
+      genres
+      seasonYear
+      coverImage {
+        medium
+        large
+        extraLarge
+      }
+    }
+    pageInfo {
+      hasNextPage
+      total
+    }
+  }
+}
