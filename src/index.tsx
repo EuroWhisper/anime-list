@@ -12,6 +12,7 @@ import {
   useQuery,
   gql,
 } from '@apollo/client';
+import Recursion from './pages/Recursion';
 
 const client = new ApolloClient({
   uri: 'https://graphql.anilist.co/',
@@ -26,6 +27,7 @@ ReactDOM.render(
           <Route path="/" element={<All />}>
             <Route index element={<All />} />
           </Route>
+          <Route path="/recursion" element={<Recursion />} />
         </Routes>
       </BrowserRouter>
     </ApolloProvider>
