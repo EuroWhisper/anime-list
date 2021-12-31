@@ -63,19 +63,21 @@ const All = () => {
         {shows}
       </Grid>
 
-      <Typography variant="body1">{`Showing ${page * perPage - perPage + 1}-${
-        page * perPage
-      } out of ${data?.Page?.pageInfo?.total}`}</Typography>
-      <Pagination
-        count={getPageCount(data?.Page?.pageInfo?.total || 0, perPage)}
-        page={page}
-        size="large"
-        variant="outlined"
-        color="primary"
-        onChange={(e, newPage) => {
-          setPage(newPage);
-        }}
-      />
+      <Typography sx={{ mt: 2 }} variant="body1">{`Showing ${
+        page * perPage - perPage + 1
+      }-${page * perPage} out of ${data?.Page?.pageInfo?.total}`}</Typography>
+      <Box sx={{ my: 2 }}>
+        <Pagination
+          count={getPageCount(data?.Page?.pageInfo?.total || 0, perPage)}
+          page={page}
+          size="large"
+          variant="outlined"
+          color="primary"
+          onChange={(e, newPage) => {
+            setPage(newPage);
+          }}
+        />
+      </Box>
     </Container>
   );
 };
