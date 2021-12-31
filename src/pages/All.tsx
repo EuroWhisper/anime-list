@@ -23,7 +23,7 @@ const All = () => {
     return (
       <Box sx={{ pt: 0.5 }}>
         <Skeleton />
-        <Skeleton width="60%" />
+        <Skeleton width="60%" /
       </Box>
     );
   }
