@@ -66,17 +66,18 @@ const All = () => {
       <Typography variant="body1">{`Showing ${page * perPage - perPage + 1}-${
         page * perPage
       } out of ${data?.Page?.pageInfo?.total}`}</Typography>
-      <Pagination
-        count={getPageCount(data?.Page?.pageInfo?.total || 0, perPage)}
-        page={page}
-        size="large"
-        variant="outlined"
-        color="primary"
-        onChange={(e, newPage) => {
-          setPage(newPage);
-        }}
-      />
-      <div>Hi everyone</div>
+      <Box sx={{ mt: 2 }}>
+        <Pagination
+          count={getPageCount(data?.Page?.pageInfo?.total || 0, perPage)}
+          page={page}
+          size="large"
+          variant="outlined"
+          color="primary"
+          onChange={(e, newPage) => {
+            setPage(newPage);
+          }}
+        />
+      </Box>
     </Container>
   );
 };

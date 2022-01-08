@@ -1,4 +1,4 @@
-name: Continuous Integration
+name: Continuous Integration & Deployment
 
 on:
   push:
@@ -13,7 +13,7 @@ jobs:
 
     strategy:
       matrix:
-        node-version: [15.x]
+        node-version: [16.x]
 
     steps:
       - uses: actions/checkout@v2
@@ -23,16 +23,15 @@ jobs:
           node-version: ${{ matrix.node-version }}
       - name: Install dependencies
         run: npm ci
-      - run: npm run build --if-present
+      - name: Create production build
+        run: CI=true npm run build
+      - name: Run tests
+        run: CI=true npm test
 
   deploy:
     name: deploy
     runs-on: ubuntu-latest
     needs: [build]
-
-    strategy:
-      matrix:
-        node-version: [15.x]
 
     if: github.ref == 'refs/heads/master'
     steps:
