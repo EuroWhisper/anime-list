@@ -47,7 +47,7 @@ jobs:
         id: deploy
         run: |
           aws deploy create-deployment \
-            -–application-name anime-list \
+            --application-name anime-list \
             -–deployment-group-name anime_list_deployment \
             -–deployment-config-name CodeDeployDefault.OneAtATime \
             -–github-location repository=${{ github.repository }},commitId=${{ github.sha }}
