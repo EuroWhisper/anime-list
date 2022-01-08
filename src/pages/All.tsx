@@ -76,6 +76,7 @@ const All = () => {
           setPage(newPage);
         }}
       />
+      <div>Hi everyone</div>
     </Container>
   );
 };
