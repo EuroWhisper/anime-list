@@ -4,4 +4,4 @@
 
 echo "Killing react server"
 
-sudo pm2 kill
+pm2 kill
