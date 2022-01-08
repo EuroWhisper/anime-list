@@ -34,7 +34,7 @@ jobs:
       matrix:
         node-version: [15.x]
 
-    # if: github.ref == 'refs/heads/master'
+    if: github.ref == 'refs/heads/master'
     steps:
       - uses: actions/checkout@v2
       - name: Configure AWS credentials
