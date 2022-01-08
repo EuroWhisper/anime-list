@@ -36,15 +36,17 @@ jobs:
     if: github.ref == 'refs/heads/master'
     steps:
       - uses: actions/checkout@v2
+      - name: Configure AWS credentials
+        uses: aws-actions/configure-aws-credentials@v1
         with:
           aws-access-key-id:${{ secrets.AWS_ACCESS_KEY_ID }}
           aws-secret-access-key:${{ secrets.AWS_SECRET_ACCESS_KEY }}
           aws-region: us-east-1
+      - name: Create CodeDeploy deployment
         id: deploy
-
         run: |
-        aws deploy create-deployment \
-        –application-name anime-list \
-        –deployment-group-name anime_list_deployment \
-        –deployment-config-name CodeDeployDefault.OneAtATime \
-        –github-location repository=${{ github.repository }},commitId=${{ github.sha }}
+          aws deploy create-deployment \
+            -–application-name anime-list \
+            -–deployment-group-name anime_list_deployment \
+            -–deployment-config-name CodeDeployDefault.OneAtATime \
+            -–github-location repository=${{ github.repository }},commitId=${{ github.sha }}
