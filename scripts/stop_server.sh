@@ -4,4 +4,3 @@
 
 echo "Killing react server"
 
-pm2 kill
