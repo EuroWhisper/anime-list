@@ -15,4 +15,4 @@ npm install pm2 -g
 
 # start our node app in the background using pm2
 
-sudo pm2 start ‘npm run start’
+pm2 start 'npm run start'
