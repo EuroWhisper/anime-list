@@ -17,9 +17,11 @@ nvm use 16.13.1
 
 npm install
 
-npm install pm2 -g
+npm install -g serve
 
+
+npm install pm2 -g
 
 # start our node app in the background using pm2
 
-pm2 start 'npm run start'
+pm2 start 'npm run serve'
