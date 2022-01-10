@@ -26,8 +26,9 @@ jobs:
       - name: Create production build
         run: CI=true npm run build
       - name: Run tests
-        run: npm run lint
-        run: CI=true npm test
+        run: |
+          npm run lint 
+          CI=true npm test
 
   deploy:
     name: deploy
