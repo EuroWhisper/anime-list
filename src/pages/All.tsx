@@ -63,9 +63,9 @@ const All = () => {
         {shows}
       </Grid>
 
-      <Typography variant="body1">{`Showing ${page * perPage - perPage + 1}-${
-        page * perPage
-      } out of ${data?.Page?.pageInfo?.total}`}</Typography>
+      <Typography sx={{ mt: 2 }} variant="body1">{`Showing ${
+        page * perPage - perPage + 1
+      }-${page * perPage} out of ${data?.Page?.pageInfo?.total}`}</Typography>
       <Box sx={{ mt: 2 }}>
         <Pagination
           count={getPageCount(data?.Page?.pageInfo?.total || 0, perPage)}
