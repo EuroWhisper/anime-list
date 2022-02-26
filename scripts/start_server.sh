@@ -6,6 +6,8 @@ curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.34.0/install.sh | bash
 
 nvm install node 16.13.1
 
+sudo chmod -R 777 /home/ec2-user/anime-list
+
 
 # navigate into current working directory
 
