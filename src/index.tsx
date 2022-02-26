@@ -5,7 +5,6 @@ import reportWebVitals from './reportWebVitals';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import All from './pages/All';
 import { ApolloClient, InMemoryCache, ApolloProvider } from '@apollo/client';
-import Recursion from './pages/Recursion';
 
 const client = new ApolloClient({
   uri: 'https://graphql.anilist.co/',
@@ -20,7 +19,6 @@ ReactDOM.render(
           <Route path="/" element={<All />}>
             <Route index element={<All />} />
           </Route>
-          <Route path="/recursion" element={<Recursion />} />
         </Routes>
       </BrowserRouter>
     </ApolloProvider>
