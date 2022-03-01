@@ -78,6 +78,7 @@ const All = () => {
           }}
         />
       </Box>
+      <Typography>Hi</Typography>
     </Container>
   );
 };
