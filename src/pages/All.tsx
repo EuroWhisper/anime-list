@@ -78,6 +78,9 @@ const All = () => {
           }}
         />
       </Box>
+      <Typography sx={{ mt: 2 }} variant="body1">
+        Hi, Katka!
+      </Typography>
     </Container>
   );
 };
